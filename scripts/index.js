@@ -2,9 +2,10 @@
 
 // Create a layer
 var _midiLayer = app.project.item(4).layer(1);
-var _rectangle1 = midiLayer.property("Contents").property("Rectangle 1");
+var _rectangle1 = _midiLayer.property("Contents").property("Rectangle 1");
+var _pathGroup = _rectangle1.property(2).property(1);
 
-$.writeln(midiLayer.property("Contents").property("Rectangle 1").matchName);
+$.writeln(_midiLayer.property("Contents").property("Rectangle 1").matchName);
 
 // Find comp
 // Add shape layer
@@ -18,9 +19,7 @@ var rectangleGroup = shapeLayer.property("Contents").addProperty("ADBE Vector Gr
 rectangleGroup.name = "Rectangle"
 
 // Path group is different
-var pathGroup = shapeLayer.property("Contents").property("Rectangle").property("Contents").addProperty("ADBE Vector Shape - Star");
-pathGroup.property("Type").setValue(2);
-pathGroup.property("Points").setValue(6);
+var pathGroup = shapeLayer.property("Contents").property("Rectangle").property("Contents").addProperty("ADBE Vector Shape - Rect");
 
 // Fill is same
 var strokeGroup = shapeLayer.property("Contents").property("Rectangle").property("Contents").addProperty("ADBE Vector Graphic - Stroke");
@@ -30,7 +29,5 @@ var fillGroup = shapeLayer.property("Contents").property("Rectangle").property("
 
 app.endUndoGroup();
 
-var myShape = new Shape();
-myShape.vertices = [[0,0], [0,100], [100,100], [100,0]];
-myShape.closed = true;
+
 
