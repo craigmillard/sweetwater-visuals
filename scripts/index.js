@@ -20,7 +20,8 @@ rectangleGroup.name = "Rectangle"
 
 // Path group is different
 var pathGroup = shapeLayer.property("Contents").property("Rectangle").property("Contents").addProperty("ADBE Vector Shape - Rect");
-
+var size = pathGroup.property("Size").setValue([100,200]);
+var position = pathGroup.property("Position").setValue([500,250]); 
 // Fill is same
 var strokeGroup = shapeLayer.property("Contents").property("Rectangle").property("Contents").addProperty("ADBE Vector Graphic - Stroke");
 
