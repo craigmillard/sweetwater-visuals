@@ -41,7 +41,7 @@ var _sound_Template = getItemByName("Template");
 var _midiLayer = getLayerByName("Top1", _sound_Template);
 
 var xOffset = -390
-var yOffset = -375
+var yOffset = -485
 
 
 // write first block
@@ -59,7 +59,7 @@ for (n = 0; n < full25["tracks"][0].notes.length; n++) {
 
     // Rectangle bounds
     if (note.time < 8){
-    drawRectangleInLayer(_midiLayer, n + ", midi: " + note.midi + ", dur: " + note.duration, [xOffset+noteOffset,yOffset+(note.time * - 20)], [10 , note.duration * 6]);
+    drawRectangleInLayer(_midiLayer, n + ", midi: " + note.midi + ", dur: " + note.duration, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
     } 
     
 
