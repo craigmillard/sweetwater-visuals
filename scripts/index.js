@@ -27,7 +27,7 @@ function getLayerByName(name, comp){
 function drawRectangleInLayer(layer, rectName, position, size){
     var _rectangleGroup = layer.property("Contents").addProperty("ADBE Vector Group")
     _rectangleGroup.name = rectName;
-
+ 
     // Rectangle Properties
     var pathGroup = layer.property("Contents").property(rectName).property("Contents").addProperty("ADBE Vector Shape - Rect");
     var size = pathGroup.property("Size").setValue(size);
@@ -41,7 +41,7 @@ var _sound_Template = getItemByName("Template");
 var _midiLayer = getLayerByName("Top1", _sound_Template);
 
 var xOffset = 45
-var yOffset = -380
+var yOffset = -387
 
 
 // write first block
@@ -50,16 +50,16 @@ for (n = 0; n < full25["tracks"][0].notes.length; n++) {
     $.writeln(note.midi);
     $.writeln(note.ticks);
     $.writeln(note.durationTicks);
-    $.writeln(note.duration);
+    $.writeln(note.duration); 
     $.writeln(note.velocity);
     $.writeln(note.time);
 
 
 // Rectangle bounds
 if (note.time < 8){
-  drawRectangleInLayer(_midiLayer, "Note " + n + ", midi: " + note.midi + ", note duration: " + note.duration, [xOffset,yOffset+(note.time * -16)], [10, note.duration * 3]);
-}
-
+  drawRectangleInLayer(_midiLayer, n + ", midi: " + note.midi + ", dur: " + note.duration, [xOffset,yOffset+(note.time * -17)], [10 , note.duration * 12]);
+} 
+ 
 
 }
 
