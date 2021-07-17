@@ -35,9 +35,19 @@ function drawRectangleInLayer(layer, rectName, position, size){
 
 }
 
-var _sound_Template = getItemByName("Sweetwater_Sound_Template");
-var _midiLayer = getLayerByName("midi", _sound_Template);
-var _rectangle2 = drawRectangleInLayer(_midiLayer, "Rectangle 2", [0,0], [100,100]);
+var _sound_Template = getItemByName("Template");
+var _midiLayer = getLayerByName("Top1", _sound_Template);
+
+// // Test drawing keys 
+// for (i = 1; i <= 25; i++) {
+//     drawRectangleInLayer(_midiLayer, "Rectangle " + i, [0,i*24], [180,10]);
+//   } 
+
+var xOffset = 45
+var yOffset = -430
+
+// Rectangle bounds
+drawRectangleInLayer(_midiLayer, "Rectangle " + i, [xOffset,yOffset], [480,120]);
 
 
 
