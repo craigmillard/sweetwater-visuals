@@ -42,6 +42,7 @@ var _midiLayer = getLayerByName("Top1", _sound_Template);
 
 var xOffset = -390
 var yOffset = -485
+var yIncrement= -120; 
 
 
 // write first block
@@ -56,12 +57,82 @@ for (n = 0; n < full25["tracks"][0].notes.length; n++) {
 
     var noteOffset = (note.midi-49)*19
 
-
-    // Rectangle bounds
-    if (note.time > 8){
-    drawRectangleInLayer(_midiLayer, n + ", midi: " + note.midi + ", dur: " + note.duration, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
-    } 
-    
+    switch (true) {
+        case (note.time <= 5.75):
+            var _midiLayer = getLayerByName("Top1", _sound_Template);
+            drawRectangleInLayer(_midiLayer, n + ", m: " + note.midi + ", d: " + note.duration + ", t: " +note.time, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
+            break;
+        case (note.time <= 11.75):
+            yOffset = -605
+            var _midiLayer = getLayerByName("Top2", _sound_Template);
+            drawRectangleInLayer(_midiLayer, n + ", m: " + note.midi + ", d: " + note.duration + ", t: " +note.time, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
+            break;
+        case (note.time <= 17.75):
+            yOffset = -725
+            var _midiLayer = getLayerByName("Top3", _sound_Template);
+            drawRectangleInLayer(_midiLayer, n + ", m: " + note.midi + ", d: " + note.duration + ", t: " +note.time, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
+            break;
+        case (note.time <= 23.75):
+            yOffset = -845
+            var _midiLayer = getLayerByName("Top4", _sound_Template);
+            drawRectangleInLayer(_midiLayer, n + ", m: " + note.midi + ", d: " + note.duration + ", t: " +note.time, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
+            break;
+        case (note.time <= 29.75):
+            yOffset = -965
+            var _midiLayer = getLayerByName("Top5", _sound_Template);
+            drawRectangleInLayer(_midiLayer, n + ", m: " + note.midi + ", d: " + note.duration + ", t: " +note.time, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
+            break;
+        case (note.time <= 35.75):
+            yOffset = -1085
+            var _midiLayer = getLayerByName("Top6", _sound_Template);
+            drawRectangleInLayer(_midiLayer, n + ", m: " + note.midi + ", d: " + note.duration + ", t: " +note.time, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
+            break;
+        case (note.time <= 41.75):
+            yOffset = -1205
+            var _midiLayer = getLayerByName("Top7", _sound_Template);
+            drawRectangleInLayer(_midiLayer, n + ", m: " + note.midi + ", d: " + note.duration + ", t: " +note.time, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
+            break;
+        case (note.time <= 47.75):
+            yOffset = -1325
+            var _midiLayer = getLayerByName("Top8", _sound_Template);
+            drawRectangleInLayer(_midiLayer, n + ", m: " + note.midi + ", d: " + note.duration + ", t: " +note.time, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
+            break;
+        case (note.time <= 53.75):
+            yOffset = -1445
+            var _midiLayer = getLayerByName("Top9", _sound_Template);
+            drawRectangleInLayer(_midiLayer, n + ", m: " + note.midi + ", d: " + note.duration + ", t: " +note.time, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
+            break;
+        case (note.time <= 59.75):
+            yOffset = -1565
+            var _midiLayer = getLayerByName("Top10", _sound_Template);
+            drawRectangleInLayer(_midiLayer, n + ", m: " + note.midi + ", d: " + note.duration + ", t: " +note.time, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
+            break;
+        case (note.time <= 65.75):
+            yOffset = -1685
+            var _midiLayer = getLayerByName("Top11", _sound_Template);
+            drawRectangleInLayer(_midiLayer, n + ", m: " + note.midi + ", d: " + note.duration + ", t: " +note.time, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
+            break;
+        case (note.time <= 71.75):
+            yOffset = -1805
+            var _midiLayer = getLayerByName("Top12", _sound_Template);
+            drawRectangleInLayer(_midiLayer, n + ", m: " + note.midi + ", d: " + note.duration + ", t: " +note.time, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
+            break;
+        case (note.time <= 77.75):
+            yOffset = -1925
+            var _midiLayer = getLayerByName("Top13", _sound_Template);
+            drawRectangleInLayer(_midiLayer, n + ", m: " + note.midi + ", d: " + note.duration + ", t: " +note.time, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
+            break;
+        case (note.time <= 83.75):
+            yOffset = -2045
+            var _midiLayer = getLayerByName("Top14", _sound_Template);
+            drawRectangleInLayer(_midiLayer, n + ", m: " + note.midi + ", d: " + note.duration + ", t: " +note.time, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
+            break;
+        case (note.time <= 89.75):
+            yOffset = -2165
+            var _midiLayer = getLayerByName("Top15", _sound_Template);
+            drawRectangleInLayer(_midiLayer, n + ", m: " + note.midi + ", d: " + note.duration + ", t: " +note.time, [xOffset+noteOffset,yOffset+(note.time * 20)], [10 , note.duration * 6]);
+            break;
+    }   
 
 }
 
