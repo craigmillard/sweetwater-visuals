@@ -1,6 +1,12 @@
-var scriptFile = File('/Users/craig/Dropbox/Art/Brand/Sweetwater/sweetwater-visuals/scripts/full25andNotes.js');
-var script = '#include' + scriptFile.fullName;
-eval(script);
+// full25
+var full25data = File('/Users/craig/Dropbox/Art/Brand/Sweetwater/sweetwater-visuals/scripts/full25andNotes.js');
+var full25data = '#include' + scriptFile.fullName;
+eval(full25data);
+
+// acc4
+var acc4data = File('/Users/craig/Dropbox/Art/Brand/Sweetwater/sweetwater-visuals/scripts/acc4.js');
+var acc4data = '#include' + scriptFile.fullName;
+eval(acc4data);
 
 function getItemByName(name){
     for (i = 1; i <= app.project.numItems; i++) {
@@ -24,6 +30,8 @@ function getLayerByName(name, comp){
     return null;
 }
 
+// TODO Stroke
+// TODO Fill
 function drawRectangleInLayer(layer, rectName, position, size){
     var _rectangleGroup = layer.property("Contents").addProperty("ADBE Vector Group")
     _rectangleGroup.name = rectName;
@@ -42,12 +50,14 @@ var _midiLayer = getLayerByName("Top1", _sound_Template);
 
 var xOffset = -390
 var yOffset = -485
-var yIncrement= -120; 
 
+// Refactor for multiple groups of layers
+
+// Clear layer midis
 
 // write first block
-for (n = 0; n < full25["tracks"][0].notes.length; n++) {
-    var note = full25["tracks"][0].notes[n];
+for (n = 0; n < acc4["tracks"][0].notes.length; n++) {
+    var note = acc4["tracks"][0].notes[n];
     $.writeln(note.midi);
     $.writeln(note.ticks);
     $.writeln(note.durationTicks);
@@ -135,17 +145,5 @@ for (n = 0; n < full25["tracks"][0].notes.length; n++) {
     }   
 
 }
-
-// // Test drawing keys 
-// for (i = 1; i <= 25; i++) {
-//     drawRectangleInLayer(_midiLayer, "Rectangle " + i, [0,i*24], [180,10]);
-//   } 
-
-// subdivide 480 into the 25 keys ()
-
-// subdivide time 120 / 8 = 15 pixels per second 
-
-// melody B3 to C5
-
 
 
