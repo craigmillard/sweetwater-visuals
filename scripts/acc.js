@@ -1,4 +1,4 @@
-var acc4 = {
+var acc = {
   "header": {
     "keySignatures": [],
     "meta": [],
