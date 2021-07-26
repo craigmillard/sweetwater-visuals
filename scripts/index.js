@@ -17,7 +17,7 @@ var rhydataFile = File('/Users/craig/Dropbox/Art/Brand/Sweetwater/sweetwater-vis
 var rhydata = '#include' + rhydataFile.fullName;
 eval(rhydata);
 
-var ambdataFile = File('/Users/craig/Dropbox/Art/Brand/Sweetwater/sweetwater-visuals/scripts/rhy.js');
+var ambdataFile = File('/Users/craig/Dropbox/Art/Brand/Sweetwater/sweetwater-visuals/scripts/amb.js');
 var ambdata = '#include' + ambdataFile.fullName;
 eval(ambdata);
 
@@ -349,7 +349,7 @@ function drawAmb(){
         $.writeln(note.velocity);
         $.writeln(note.time);
     
-        var noteOffset = (note.midi-49)*19  
+        var noteOffset = (note.midi-35)*19  
     
               switch (true) {
             case (note.time <= 5.75):
@@ -434,9 +434,10 @@ var _sound_Template = getItemByName("Template");
 var xOffset = -190
 var yOffset = -485
 
-// drawAcc()
+drawAcc()
 // drawMel();
-drawAmb();
+// drawRhy();
+// drawAmb();
 
 // Refactor for multiple groups of layers
 
